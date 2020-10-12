@@ -4,8 +4,8 @@ public class CooldownsManager
 {
     // A class for handling and managing multiple cooldowns efficiently
     //
-    // Main wiki page: https://github.com/JosepeDev/UnityCooldownsHandler/wiki
-    // Examples and tutorial: https://github.com/JosepeDev/UnityCooldownsHandler/wiki/Examples-&-Tutorial
+    // Main wiki page: https://github.com/JosepeDev/CooldownHandler/wiki
+    // Examples and tutorial: https://github.com/JosepeDev/CooldownHandler/wiki/Examples-&-Tutorial
     //
     // INFO AND TOOLS:
     // 

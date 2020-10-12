@@ -5,8 +5,8 @@ public class Cooldown
     // A class for handling cooldowns in Unity using a timer
     // It is recommended to create a CooldownManager inside a class you want to use cooldowns in.
     //
-    // Main wiki page: https://github.com/JosepeDev/UnityCooldownsHandler/wiki
-    // Examples and tutorial: https://github.com/JosepeDev/UnityCooldownsHandler/wiki/Examples-&-Tutorial
+    // Main wiki page: https://github.com/JosepeDev/CooldownHandler/wiki
+    // Examples and tutorial: https://github.com/JosepeDev/CooldownHandler/wiki/Examples-&-Tutorial
     //
     // INFO AND TOOLS:
     //
