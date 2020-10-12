@@ -1,3 +1,4 @@
+# CooldownHandler
 Simple tools for handling and managing cooldowns in UnityEngine efficiently
 
 # [WIKI]:
