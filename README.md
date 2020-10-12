@@ -1,4 +1,4 @@
-# Shigga's Cooldowns Handler
+Cooldowns Handler
 Tools for handling and managing cooldowns in UnityEngine efficiently
 
 # [WIKI]:
