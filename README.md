@@ -2,9 +2,9 @@
 Tools for handeling and managing cooldowns in UnityEngine efficiently
 
 # WIKI:
-* **[CooldownsManager]** class
+* **[CooldownsManager]** class - 
 For handeling multiple cooldowns in UnityEngine efficiently
-* **[Cooldown]** class
+* **[Cooldown]** class - 
 For handeling multiple cooldowns in UnityEngine efficiently
 
 [CooldownsManager]: https://github.com/JosepeDev/UnityCooldownsHandler/wiki/CooldownsManager
