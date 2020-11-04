@@ -2,15 +2,17 @@ using System;
 
 public class CooldownsManager 
 {
-    // A class for handling and managing multiple cooldowns efficiently
-    //
-    // Main wiki page: https://github.com/JosepeDev/CooldownHandler/wiki
-    // Examples and tutorial: https://github.com/JosepeDev/CooldownHandler/wiki/Examples-&-Tutorial
-    //
-    // INFO AND TOOLS:
-    // 
-    // DecreaseCooldowns() - Call this method inside Update() to decrease all the cooldowns
-    // NewCooldown() - Creates and returns a new cooldown, just input the cooldown's duration.
+    /// A class for handling and managing multiple cooldowns efficiently
+    ///
+    /// Main wiki page: https://github.com/JosepeDev/Cooldown-System/wiki
+    /// Examples and tutorial: https://github.com/JosepeDev/Cooldown-System/wiki/Examples-&-Tutorial
+    ///
+    /// INFO AND TOOLS:
+    /// 
+    /// DecreaseCooldowns() - Call this method inside Update() to decrease all the cooldowns
+    /// NewCooldown() - Creates and returns a new cooldown, just input the cooldown's duration.
+
+    #region Content
 
     #region Variables
 
@@ -53,6 +55,8 @@ public class CooldownsManager
             decreaseCooldowns += cooldown.DecreaseCooldown;
         }
     }
+
+    #endregion
 
     #endregion
 }
