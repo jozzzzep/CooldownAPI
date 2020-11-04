@@ -2,21 +2,23 @@ using UnityEngine;
 
 public class Cooldown
 {
-    // A class for handling cooldowns in Unity using a timer
-    // It is recommended to create a CooldownManager inside a class you want to use cooldowns in.
-    //
-    // Main wiki page: https://github.com/JosepeDev/CooldownHandler/wiki
-    // Examples and tutorial: https://github.com/JosepeDev/CooldownHandler/wiki/Examples-&-Tutorial
-    //
-    // INFO AND TOOLS:
-    //
-    // isActive - Call this bool for checking if the cooldown is active (timer higher than 0 = active)
-    // Duration - Returns the value of the current default duration
-    //
-    // DecreaseCooldown() - Call this method on Update() for each cooldown you have (don't do it if you use the cooldowns manager)
-    // ActivateCooldown() - Call this for activating the cooldown. If you don't input a duration, the default one will be used
-    // ResetCooldown() - If you want to deactivate the cooldown
-    // ChangeDefaultDurationValue() - Call this if you want to change the default Duration value after the declaration
+    /// A class for handling cooldowns in Unity using a timer
+    /// It is recommended to create a CooldownManager inside a class you want to use cooldowns in.
+    ///
+    /// Main wiki page: https://github.com/JosepeDev/Cooldown-System/wiki
+    /// Examples and tutorial: https://github.com/JosepeDev/Cooldown-System/wiki/Examples-&-Tutorial
+    ///
+    /// INFO AND TOOLS:
+    ///
+    /// isActive - Call this bool for checking if the cooldown is active (timer higher than 0 = active)
+    /// Duration - Returns the value of the current default duration
+    ///
+    /// DecreaseCooldown() - Call this method on Update() for each cooldown you have (don't do it if you use the cooldowns manager)
+    /// ActivateCooldown() - Call this for activating the cooldown. If you don't input a duration, the default one will be used
+    /// ResetCooldown() - If you want to deactivate the cooldown
+    /// ChangeDefaultDurationValue() - Call this if you want to change the default Duration value after the declaration
+
+    #region Content
 
     #region Variables and Properties
 
@@ -87,6 +89,8 @@ public class Cooldown
     {
         _duration = newDurationValue;
     }
+
+    #endregion
 
     #endregion
 }
