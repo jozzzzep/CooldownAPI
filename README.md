@@ -3,8 +3,8 @@ Simple and easy tool for handling and managing cooldowns in UnityEngine efficien
 ### Content
 - [Setup & Examples](#setup-and-examples)
 - [Documentations](#documentations)
-  - [CooldownManager](cooldownmanager)
-  - [Cooldown](cooldown)
+  - [CooldownManager](#cooldownmanager)
+  - [Cooldown](#cooldown)
 
 # Setup And Examples
 Let's say you want to add a cooldown to some behaviour in your game.  
