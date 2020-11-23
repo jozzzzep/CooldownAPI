@@ -2,54 +2,56 @@ using UnityEngine;
 
 public class Cooldown
 {
-    /// A class for handling cooldowns in Unity using a timer
+    /// A class for handling a single cooldown in Unity using a timer
     /// It is recommended to create a CooldownManager inside a class you want to use cooldowns in.
     ///
-    /// Main wiki page: https://github.com/JosepeDev/Cooldown-System/wiki
-    /// Examples and tutorial: https://github.com/JosepeDev/Cooldown-System/wiki/Examples-&-Tutorial
+    /// WIKI & INFO: https://github.com/JosepeDev/CooldownAPI
     ///
-    /// INFO AND TOOLS:
-    ///
-    /// isActive - Call this bool for checking if the cooldown is active (timer higher than 0 = active)
-    /// Duration - Returns the value of the current default duration
-    ///
-    /// DecreaseCooldown() - Call this method on Update() for each cooldown you have (don't do it if you use the cooldowns manager)
-    /// ActivateCooldown() - Call this for activating the cooldown. If you don't input a duration, the default one will be used
-    /// ResetCooldown() - If you want to deactivate the cooldown
-    /// ChangeDefaultDurationValue() - Call this if you want to change the default Duration value after the declaration
-
-    #region Content
+    /// Properies:
+    /// - IsActive - Determines if the cooldown is currently active (timer higher than zero)
+    /// - Duration - Returns the value of the default duration of the Cooldown object.
+    /// 
+    /// Methods:
+    /// - Activate()               - Activates the cooldown with the default duration saved in the object.
+    /// - Activate(float duration) - Activates the cooldown with a custom duration.
+    /// - Deactivate()             - Resets the timer (deactivates the cooldown).
+    /// - ChangeDuration()         - Changes the deafult cooldown duration saved in the object.
 
     #region Variables and Properties
 
-    // variables
-    private float cooldownTimer; // The current value of the cooldown (higher than 0 = active)
-    private float _duration; // Set this value on the declaration of the object (it is the default duration value)
+    /// <summary>
+    /// Determines if the cooldown is currently active (timer higher than zero)
+    /// <para> To activate >> <see cref="Activate()"/> or <see cref="Activate(float)"/></para>
+    /// </summary>
+    public bool IsActive
+    {
+        get => _cooldownTimer > 0;
+    }
 
-    // properties
+    /// <summary>
+    /// Returns the value of the default duration of the <see cref="Cooldown"/> object.
+    /// <para> You can change its value at anytime with <see cref="ChangeDuration(float)"/></para>
+    /// </summary>
     public float Duration
     {
-        get
-        {
-            return _duration;
-        }
+        get => _duration;
     }
 
-    public bool isActive
-    {
-        get
-        {
-            return cooldownTimer > 0;
-        }
-    }
+    // variables
+    private float _cooldownTimer; // The current value of the cooldown (higher than 0 = active)
+    private float _duration; // Set this value on the declaration of the object (it is the default duration value)
 
     #endregion
 
     #region Constructors
 
+    /// <summary>
+    /// NOT RECOMMENDED - Use the <see cref="CooldownManager"/> class for creating a cooldown. <see cref="CooldownManager.NewCooldown(float)"/>
+    /// </summary>
+    /// <param name="_duration">The default duration of the cooldown</param>
     public Cooldown(float _duration)
     {
-        cooldownTimer = 0;
+        _cooldownTimer = 0;
         this._duration = _duration;
     }
 
@@ -57,40 +59,54 @@ public class Cooldown
 
     #region Methods
 
-    public void DecreaseCooldown()
+    /// <summary>
+    /// <para> DON'T YOU THIS METHOD IF YOU USE THE <see cref="CooldownManager"/>. (and you should use the <see cref="CooldownManager"/>) </para>
+    /// The most important method. Call it on Update() inside a MonoBehaviour.
+    /// </summary>
+    public void Update()
     {
-        // decrease cooldown only if its value is higher than 0
-        if (isActive)
+        // only if the cooldown is active (timer higher than zero)
+        if (IsActive)
         {
             // decreases the cooldown by the time
-            Mathf.Clamp(cooldownTimer -= Time.deltaTime, 0, _duration);
+            Mathf.Clamp(_cooldownTimer -= Time.deltaTime, 0, _duration);
         }
     }
 
-    // without a duration parameter, uses the default duration
-    public void ActivateCooldown()
+    /// <summary>
+    /// <para> Activates the cooldown with the default duration saved in the object. </para>
+    /// <para> Call this method with parameters to activate the cooldown with a custom duration. <see cref="Activate(float)"/></para>
+    /// </summary>
+    public void Activate() => Activate(_duration);
+
+    /// <summary>
+    /// <para> Activates the cooldown with a custom duration. </para>
+    /// <para> Call this method without parameters to activate the cooldown with the default duration. <see cref="Activate()"/></para>
+    /// </summary>
+    /// <param name="customDuration">A float represents the duration in seconds you want the cooldown to be active</param>
+    public void Activate(float customDuration)
     {
-        this.ActivateCooldown(_duration);
+        _cooldownTimer = customDuration;
     }
 
-    // if you want to add a special duration for the cooldown while keeping the default one
-    public void ActivateCooldown(float customDuration)
+    /// <summary>
+    /// Resets the timer (deactivates the cooldown).
+    /// </summary>
+    public void Deactivate()
     {
-        cooldownTimer = customDuration;
+        _cooldownTimer = 0;
     }
 
-    // reset the timer's value to 0
-    public void DeactivateCooldown()
-    {
-        cooldownTimer = 0;
-    }
-
-    public void ChangeDefaultDurationValue(float newDurationValue)
+    /// <summary>
+    /// <para> Changes the deafult cooldown duration saved in the object. </para>
+    /// <para> The deafult duration is set upon initialization and can be changed at anytime. </para>
+    /// <para> You can get the value of the deafult duration from the propertie <see cref="Duration"/></para>
+    /// </summary>
+    /// <param name="newDurationValue"></param>
+    public void ChangeDuration(float newDurationValue)
     {
         _duration = newDurationValue;
     }
-
-    #endregion
 
     #endregion
 }

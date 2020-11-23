@@ -1,28 +1,30 @@
 using System;
 
-public class CooldownsManager 
+public class CooldownManager 
 {
-    /// A class for handling and managing multiple cooldowns efficiently
+    /// A class for handling and managing multiple cooldowns efficiently.
     ///
-    /// Main wiki page: https://github.com/JosepeDev/Cooldown-System/wiki
-    /// Examples and tutorial: https://github.com/JosepeDev/Cooldown-System/wiki/Examples-&-Tutorial
+    /// WIKI & INFO: https://github.com/JosepeDev/CooldownAPI
     ///
-    /// INFO AND TOOLS:
-    /// 
-    /// DecreaseCooldowns() - Call this method inside Update() to decrease all the cooldowns
-    /// NewCooldown() - Creates and returns a new cooldown, just input the cooldown's duration.
-
-    #region Content
+    /// Methods:
+    /// - Update()      - IMPORTANT Call this method on Update() inside a MonoBehaviour to Update all the cooldowns
+    /// - NewCooldown() - Creates and returns a new cooldown, just input the cooldown's duration.
 
     #region Variables
 
     // when called it'll decrease every cooldown you created with this object
-    private Action decreaseCooldowns;
+    private Action cooldownsUpdateMethods;
 
     #endregion
 
     #region Methods
 
+    /// <summary>
+    /// Returns a new <see cref="Cooldown"/> object and subscribes it to the <see cref="CooldownManager"/> it has been created with.
+    /// <para> When you call the <see cref="Update()"/>, it updates all the cooldowns you created with <see cref="NewCooldown(float)"/> at once </para>
+    /// </summary>
+    /// <param name="duration"> The default duration you want the <see cref="Cooldown"/> object to have.</param>
+    /// <returns></returns>
     public Cooldown NewCooldown(float duration)
     {
         // create a new cooldown
@@ -35,28 +37,28 @@ public class CooldownsManager
         return returnThisCooldown;
     }
 
-    // calls the delegate from outside the class
-    public void DecreaseCooldowns()
+    /// <summary>
+    /// IMPORTANT >> Call this method on Update() inside a MonoBehaviour to Update all the cooldowns
+    /// </summary>
+    public void Update()
     {
-        decreaseCooldowns();
+        cooldownsUpdateMethods();
     }
 
     private void AssignCooldownToDelegate(Cooldown cooldown)
     {
         // delegate has no subscribers
-        if (decreaseCooldowns == null)
+        if (cooldownsUpdateMethods == null)
         {
             // assign the first subscriber
-            decreaseCooldowns = cooldown.DecreaseCooldown;
+            cooldownsUpdateMethods = cooldown.Update;
         }
         else
         {
             // add an additional subscriber
-            decreaseCooldowns += cooldown.DecreaseCooldown;
+            cooldownsUpdateMethods += cooldown.Update;
         }
     }
-
-    #endregion
 
     #endregion
 }
