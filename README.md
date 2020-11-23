@@ -2,7 +2,6 @@
 Simple tools for handling and managing cooldowns in UnityEngine efficiently.
 ### Content
 - [Setup & Examples](#setup-and-examples)
-- Examples
 - Documentations
   - CooldownManager
   - Cooldown
@@ -84,6 +83,15 @@ You can also **change** the **default duration** at any time with the method **C
 ```csharp
 attackCooldown.ChangeDuration(8f);
 ```
+You can also **manually** disable the cooldown and reset its timer to zero.  
+Use the method **Deactivate()**  
+```
+attackCooldown.Deactivate();
+```
+# Documentations
+### CooldownManager
+- 
+### Cooldown
 
 # [WIKI]:
 * **[Examples & Tutorial]**
