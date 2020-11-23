@@ -8,11 +8,11 @@ Simple tools for handling and managing cooldowns in UnityEngine efficiently.
 
 # Setup And Examples
 Let's say you want to add a cooldown to some behaviour in your game.  
-- First, create and initialize a **CooldownManager** object. (Do this inside a **MonoBehaviour** class)
+First, create and initialize a **CooldownManager** object. (Do this inside a **MonoBehaviour** class)
 ```csharp
 CooldownManager cooldownManager = new CooldownManager();
 ```
-- Very simple.  
+Very simple.  
 Now the last step, call the method **Update() of your CooldownManager** inside the **Update()** method  
 ```csharp
 void Update()
