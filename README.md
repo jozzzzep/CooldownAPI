@@ -3,21 +3,21 @@ Simple and easy tool for handling and managing cooldowns in UnityEngine efficien
 ### Content
 - [Setup & Examples](#setup-and-examples)
 - [Documentations](#documentations)
-  - [CooldownManager](#cooldownmanager)
+  - [CooldownsManager](#cooldownsmanager)
   - [Cooldown](#cooldown)
 
 # Setup And Examples
 Let's say you want to add a cooldown to some behaviour in your game.  
-First, create and initialize a **CooldownManager** object. (Do this inside a **MonoBehaviour** class)
+First, create and initialize a **CooldownsManager** object. (Do this inside a **MonoBehaviour** class)
 ```csharp
-CooldownManager cooldownManager = new CooldownManager();
+CooldownsManager cooldownsManager = new CooldownsManager();
 ```
 Very simple.  
-Now the last step, call the method **Update() of your CooldownManager** inside the **Update()** method  
+Now the last step, call the method **Update() of your CooldownsManager** inside the **Update()** method  
 ```csharp
 void Update()
 {
-  cooldownManager.Update();
+  cooldownsManager.Update();
 }
 ```
 You're all set and can add cooldowns.  
@@ -40,7 +40,7 @@ Initialize all your cooldowns inside **Start()** or **Awake()**
 ```csharp
 void Awake()
 {
-  attackCooldown = cooldownManager.NewCooldown(attackCooldownDuration);
+  attackCooldown = cooldownsManager.NewCooldown(attackCooldownDuration);
 }
 ```
 Done. The cooldown is ready.  
@@ -67,8 +67,8 @@ if (player is pressing the attack button)
 ```
 A **Cooldown** object contains **two** properties. A **timer** and a default **duration**.  
 The Cooldown is considered "**active**" when its **timer** is equal to **zero**.  
-The timer is **decreasing** when the **Update()** method of the **CooldownManager** is called.  
-Let's say we want to add a special, shorter attack, and apply a **short cooldown** for the attack, with a **different duration**.  
+The timer is **decreasing** when the **Update()** method of the **CooldownsManager** is called.  
+Let's say we want to add a special, shorter attack, and apply a **short cooldown** for it with a **different duration**.  
 We can do it with the **Activate()** method by **inputting** a **custom duration** to it.  
 ```csharp
 void SpecialAttack()
@@ -89,18 +89,18 @@ Use the method **Deactivate()**
 attackCooldown.Deactivate();
 ```
 # Documentations
-### CooldownManager
+### CooldownsManager
 ![img](https://i.imgur.com/trJDZ2P.jpg)
 - Methods
   - **Update()**  
   Call this method inside Update() in a MonoBehaviour inherited class.  
   Updates the value of all the cooldowns that are subscribed to the specified manager.  
   Decreases all the cooldowns timers by the time at once.  
-  A cooldown is subscribed automatically to the CooldownManager it has been created with.
+  A cooldown is subscribed automatically to the CooldownsManager it has been created with.
   
   - **NewCooldown(float duration)**  
   Returns a new Cooldown object. Better than creating a Cooldown with a constructor.  
-  Subscribes the cooldown created to the Update() method of the manager it has been created with.   
+  Subscribes the cooldown created to the Update() method of the CooldownsManager it has been created with.   
   
 ### Cooldown
 ![img](https://i.imgur.com/kHITH1f.jpg)
