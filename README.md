@@ -1,10 +1,10 @@
-# Cooldown System
-Simple tools for handling and managing cooldowns in UnityEngine efficiently.
+# CooldownAPI
+Simple and easy tool for handling and managing cooldowns in UnityEngine efficiently.
 ### Content
 - [Setup & Examples](#setup-and-examples)
-- Documentations
-  - CooldownManager
-  - Cooldown
+- [Documentations](#documentations)
+  - [CooldownManager](cooldownmanager)
+  - [Cooldown](cooldown)
 
 # Setup And Examples
 Let's say you want to add a cooldown to some behaviour in your game.  
@@ -90,17 +90,41 @@ attackCooldown.Deactivate();
 ```
 # Documentations
 ### CooldownManager
-- 
+![img](https://i.imgur.com/trJDZ2P.jpg)
+- Methods
+  - **Update()**  
+  Call this method inside Update() in a MonoBehaviour inherited class.  
+  Updates the value of all the cooldowns that are subscribed to the specified manager.  
+  Decreases all the cooldowns timers by the time at once.  
+  A cooldown is subscribed automatically to the CooldownManager it has been created with.
+  
+  - **NewCooldown(float duration)**  
+  Returns a new Cooldown object. Better than creating a Cooldown with a constructor.  
+  Subscribes the cooldown created to the Update() method of the manager it has been created with.   
+  
 ### Cooldown
-
-# [WIKI]:
-* **[Examples & Tutorial]**
-* **[CooldownsManager]** class - 
-For handling and creating cooldowns in UnityEngine efficiently
-* **[Cooldown]** class - 
-For handling a single cooldown in UnityEngine - recommended to use the manager
-
-[WIKI]: https://github.com/JosepeDev/Cooldown-System/wiki
-[Examples & Tutorial]: https://github.com/JosepeDev/Cooldown-System/wiki/Examples-&-Tutorial
-[CooldownsManager]: https://github.com/JosepeDev/Cooldown-System/wiki/CooldownsManager-Class
-[Cooldown]: https://github.com/JosepeDev/Cooldown-System/wiki/Cooldown-Class
+![img](https://i.imgur.com/kHITH1f.jpg)
+- Properties
+  - **IsActive**  
+  Determines if the cooldown is currently active.  
+  Returns true if the timer is higher than zero.  
+  
+  - **Duration**  
+  Returns the default duration value of the Cooldown object.  
+  The default duration is set upon initialization.  
+  It used when you call the Activate() method without inputting parameters.  
+  
+- Methods
+  - **Activate()**  
+  Activates the cooldown with the default duration.  
+  You can get the default duration's value form the Duration propertie.  
+  
+  - **Activate(float customDuration)**  
+  Activates the cooldown with a custom duration.  
+  
+  - **Deactivate()**  
+  Deactivates the cooldown manually.  
+  Resets the timer's value to zero.  
+  
+  - **ChangeDuration(float duration)**  
+  For changing the default duration's value.  
