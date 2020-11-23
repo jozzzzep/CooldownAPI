@@ -1,8 +1,8 @@
 # CooldownAPI
 Simple and easy tool for handling and managing cooldowns in UnityEngine efficiently.
 ### Content
-- [Setup & Examples](#setup-and-examples)
-- [Documentations](#documentations)
+- [**Setup & Examples**](#setup-and-examples)
+- [**Documentations**](#documentations)
   - [CooldownsManager](#cooldownsmanager)
   - [Cooldown](#cooldown)
 
