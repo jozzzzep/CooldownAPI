@@ -90,7 +90,9 @@ attackCooldown.Deactivate();
 ```
 # Documentations
 ### CooldownsManager
-![img](https://i.imgur.com/trJDZ2P.jpg)
+A class for handling and managing multiple cooldowns efficiently.  
+![img](https://i.imgur.com/s6orwHe.jpg)  
+
 - Methods
   - **Update()**  
   Call this method inside Update() in a MonoBehaviour inherited class.  
@@ -103,7 +105,10 @@ attackCooldown.Deactivate();
   Subscribes the cooldown created to the Update() method of the CooldownsManager it has been created with.   
   
 ### Cooldown
-![img](https://i.imgur.com/kHITH1f.jpg)
+A class for handling a single cooldown in Unity using a timer.  
+It is recommended to create a CooldownManager inside a class you want to use cooldowns in.  
+![img](https://i.imgur.com/kHITH1f.jpg)  
+
 - Properties
   - **IsActive**  
   Determines if the cooldown is currently active.  
