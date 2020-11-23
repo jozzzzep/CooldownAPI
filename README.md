@@ -27,7 +27,7 @@ When the player **presses** a key, we want to **attack**.
 But we also want to **apply a cooldown** when the player **attacks**.  
 And also to **prevent** the player from attacking **if** the cooldown **is active**.  
 First let's **create** a **Cooldown** for the attack and call it "**attackCooldown**"   
-Also let's create a **float** variable for the **amount of seconds** between attacks. 
+Also, let's create a **float** variable for the **amount of seconds** between attacks. 
 Let's say we want 3.25 seconds cooldown duration.
 ```csharp
 float attackCoodldownDuration = 3.25f;
@@ -54,7 +54,7 @@ void Attack()
   attackCooldown.Activate();
 }
 ```
-Now, let's **prevent** the player from attacing **if** the cooldown **is active**.  
+Now, let's **prevent** the player from attacking **if** the cooldown **is active**.  
 We can do this by checking the value **IsActive**.  
 ```csharp
 if (player is pressing the attack button)
@@ -97,7 +97,7 @@ A class for handling and managing multiple cooldowns efficiently.
   - **Update()**  
   Call this method inside Update() in a MonoBehaviour inherited class.  
   Updates the value of all the cooldowns that are subscribed to the specified manager.  
-  Decreases all the cooldowns timers by the time at once.  
+  Decreases all the cooldown timers by the time, at once.  
   A cooldown is subscribed automatically to the CooldownsManager it has been created with.
   
   - **NewCooldown(float duration)**  
