@@ -46,7 +46,7 @@ public class Cooldown
     #region Constructors
 
     /// <summary>
-    /// NOT RECOMMENDED - Use the <see cref="CooldownManager"/> class for creating a cooldown. <see cref="CooldownManager.NewCooldown(float)"/>
+    /// NOT RECOMMENDED - Use the <see cref="CooldownsManager"/> class for creating a cooldown. <see cref="CooldownsManager.NewCooldown(float)"/>
     /// </summary>
     /// <param name="_duration">The default duration of the cooldown</param>
     public Cooldown(float _duration)
@@ -60,7 +60,7 @@ public class Cooldown
     #region Methods
 
     /// <summary>
-    /// <para> DON'T YOU THIS METHOD IF YOU USE THE <see cref="CooldownManager"/>. (and you should use the <see cref="CooldownManager"/>) </para>
+    /// <para> DON'T YOU THIS METHOD IF YOU USE THE <see cref="CooldownsManager"/>. (and you should use the <see cref="CooldownsManager"/>) </para>
     /// The most important method. Call it on Update() inside a MonoBehaviour.
     /// </summary>
     public void Update()

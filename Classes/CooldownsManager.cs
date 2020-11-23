@@ -1,6 +1,6 @@
 using System;
 
-public class CooldownManager 
+public class CooldownsManager 
 {
     /// A class for handling and managing multiple cooldowns efficiently.
     ///
@@ -20,7 +20,7 @@ public class CooldownManager
     #region Methods
 
     /// <summary>
-    /// Returns a new <see cref="Cooldown"/> object and subscribes it to the <see cref="CooldownManager"/> it has been created with.
+    /// Returns a new <see cref="Cooldown"/> object and subscribes it to the <see cref="CooldownsManager"/> it has been created with.
     /// <para> When you call the <see cref="Update()"/>, it updates all the cooldowns you created with <see cref="NewCooldown(float)"/> at once </para>
     /// </summary>
     /// <param name="duration"> The default duration you want the <see cref="Cooldown"/> object to have.</param>
