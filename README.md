@@ -1,4 +1,4 @@
-![img](https://i.imgur.com/6VJLFue.png)  
+![img](https://i.imgur.com/cSOJR5d.png)  
 
 ### Content
 - [**Setup & Examples**](#setup-and-examples)
