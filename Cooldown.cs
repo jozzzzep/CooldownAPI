@@ -8,16 +8,27 @@ namespace CooldownAPI
         /// Tutorial and Examples: https://github.com/JosepeDev/CooldownAPI
         ///
         /// Properies:
-        /// - IsActive - Determines if the cooldown is currently active (timer higher than zero)
-        /// - Duration - Returns the value of the default duration of the Cooldown object.
-        /// - Timer - Returns the current value from the cooldown's timer
+        /// - IsActive                 - Determines if the cooldown is currently active (timer higher than zero)
+        /// - Duration                 - Returns the value of the default duration of the Cooldown object.
+        /// - Timer                    - Returns the current value from the cooldown's timer
         /// 
         /// Methods:
         /// - Activate()               - Activates the cooldown with the default duration saved in the object.
         /// - Activate(float duration) - Activates the cooldown with a custom duration.
         /// - Deactivate()             - Resets the timer (deactivates the cooldown).
         /// - ChangeDuration()         - Changes the deafult cooldown duration saved in the object.
-        
+
+        /// <summary>
+        /// Used for creating a new cooldown
+        /// </summary>
+        /// <param name="duration">The default duration of the cooldown</param>
+        public Cooldown(float duration)
+        {
+            _cooldownTimer = 0;
+            _duration = duration;
+            CDM.AddToManager(Update);
+        }
+
         /// <summary>
         /// Determines if the cooldown is currently active (timer higher than zero)
         /// <para> To activate >> <see cref="Activate()"/> or <see cref="Activate(float)"/></para>
@@ -61,22 +72,12 @@ namespace CooldownAPI
         }
 
         /// <summary>
-        /// Used for creating a new cooldown
+        /// Do not call manually
         /// </summary>
-        /// <param name="duration">The default duration of the cooldown</param>
-        public Cooldown(float duration)
-        {
-            _cooldownTimer = 0;
-            _duration = duration;
-            CDM.AddToManager(Update);
-        }
-
         private void Update()
         {
-            // only if the cooldown is active (timer higher than zero)
             if (IsActive)
             {
-                // decreases the cooldown by the time
                 _cooldownTimer = Mathf.Clamp(_cooldownTimer - Time.deltaTime, 0f, _duration);
             }
         }

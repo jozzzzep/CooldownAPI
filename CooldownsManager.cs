@@ -18,15 +18,12 @@ namespace CooldownAPI
 
         internal void AddToManager(Action call)
         {
-            // delegate has no subscribers
             if (cooldownsUpdates == null)
             {
-                // assign the first subscriber
                 cooldownsUpdates = call;
             }
             else
             {
-                // add an additional subscriber
                 cooldownsUpdates += call;
             }
         }
