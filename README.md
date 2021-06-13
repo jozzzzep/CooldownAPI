@@ -78,7 +78,7 @@ attackCooldown.ChangeDuration(8f);
 ```
 You can also **manually** deactivate the cooldown and reset its timer to zero.  
 Use the method **Deactivate()**  
-```
+```csharp
 attackCooldown.Deactivate();
 ```
 # Documentations
