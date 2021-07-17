@@ -85,11 +85,6 @@ attackCooldown.Deactivate();
 ### Cooldown
 A class for handling a cooldown in Unity using a timer.   
 
-- Constructors
-  - **Cooldown(float duration)**  
-  Used for creating a new cooldown  
-  Input the default duration of the cooldown
-
 - Properties
   - **IsActive**  
   Determines if the cooldown is currently active.  
@@ -117,3 +112,12 @@ A class for handling a cooldown in Unity using a timer.
   
   - **ChangeDuration(float duration)**  
   For changing the default duration's value.  
+
+- Constructors
+  - **Cooldown(float duration)**  
+  Used for creating a new cooldown  
+  Input the default duration of the cooldown
+
+- Events
+  - **BecameInactive**  
+  An event that is raised when the cooldown becomes inactive
