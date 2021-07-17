@@ -11,21 +11,15 @@ namespace CooldownAPI
 
         private Action cooldownsUpdates;
 
-        private void Update()
-        {
+        private void Update() =>
             cooldownsUpdates();
-        }
 
         internal void AddToManager(Action call)
         {
             if (cooldownsUpdates == null)
-            {
                 cooldownsUpdates = call;
-            }
             else
-            {
                 cooldownsUpdates += call;
-            }
         }
     }
 }
