@@ -7,7 +7,7 @@ namespace CooldownAPI
     {
         /// The class that manages and calls all the cooldowns
         /// No need to use or call it manually 
-        /// Tutorial and Examples: https://github.com/JosepeDev/CooldownAPI
+        /// Tutorial and Examples: https://github.com/jozzzzep/CooldownAPI
 
         private Action cooldownsUpdates;
 
