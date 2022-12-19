@@ -1,14 +1,14 @@
 ![img](https://i.imgur.com/cSOJR5d.png)  
  <p align="center">
-        <img src="https://img.shields.io/codefactor/grade/github/jozzzep/CooldownAPI/main">
-        <img src="https://img.shields.io/github/languages/code-size/jozzzep/CooldownAPI">
-        <img src="https://img.shields.io/github/license/jozzzep/CooldownAPI">
-        <img src="https://img.shields.io/github/v/release/jozzzep/CooldownAPI">
+        <img src="https://img.shields.io/codefactor/grade/github/jozzzzep/CooldownAPI/main">
+        <img src="https://img.shields.io/github/languages/code-size/jozzzzep/CooldownAPI">
+        <img src="https://img.shields.io/github/license/jozzzzep/CooldownAPI">
+        <img src="https://img.shields.io/github/v/release/jozzzzep/CooldownAPI">
 </p>
 <p align="center">
-        <img src="https://img.shields.io/github/followers/jozzzep?style=social">
-        <img src="https://img.shields.io/github/watchers/jozzzep/CooldownAPI?style=social">
-        <img src="https://img.shields.io/github/stars/jozzzep/CooldownAPI?style=social">
+        <img src="https://img.shields.io/github/followers/jozzzzep?style=social">
+        <img src="https://img.shields.io/github/watchers/jozzzzep/CooldownAPI?style=social">
+        <img src="https://img.shields.io/github/stars/jozzzzep/CooldownAPI?style=social">
 </p>
 
 ### Content
