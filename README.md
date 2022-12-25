@@ -14,7 +14,7 @@
 ### Content
 - [**Setup & Examples**](#setup-and-examples)
 - [**Documentations**](#documentations)
-  - [Cooldown](#cooldown)
+- [**Importing**](#importing)
 
 # Setup And Examples
 Let's say we have an **attack method** in our game for the **player**.  When the player **presses** a key, we want to **attack**.  But we also want to **apply a cooldown** when the player **attacks** to **prevent** the player from attacking too quickly.  
@@ -121,3 +121,10 @@ A class for handling a cooldown in Unity using a timer.
 - Events
   - **BecameInactive**  
   An event that is raised when the cooldown becomes inactive
+  
+
+# Importing
+[**Click here to download**](https://github.com/jozzzzep/CooldownAPI/raw/main/packages/CooldownAPI.unitypackage), or go to the packages folder of the repository and download the package file.  
+Then import the package directly to your project like any other Unity package. 
+This is he fastest and easiest way.  
+**Done!**
